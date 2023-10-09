@@ -48,7 +48,19 @@ import { NavComponent } from './components/nav/nav.component';
     MatCardModule,
     // Angular Material - Imports
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCheckboxModule,
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatInputModule,
+    MatRadioModule,
+    MatTableModule,
+    MatIconModule,
+    MatListModule,
+    MatCardModule,
     // Requisições http
     // Forms
     

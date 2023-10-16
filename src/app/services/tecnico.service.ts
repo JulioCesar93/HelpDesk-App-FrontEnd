@@ -8,6 +8,9 @@ import { API_CONFIG } from '../config/api.config';
   providedIn: 'root'
 })
 export class TecnicoService {
+  update(tecnico: Tecnico) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(
     private http: HttpClient) { }

@@ -9,9 +9,15 @@ import { API_CONFIG } from '../config/api.config';
 })
 export class TecnicoService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient) { }
 
   findById(id: any): Observable<Tecnico> {
     return this.http.get<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${id}`);
   }
+
+  create(tecnico: Tecnico): Observable<Tecnico> {
+    return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos`, tecnico);
+  }
+
 }

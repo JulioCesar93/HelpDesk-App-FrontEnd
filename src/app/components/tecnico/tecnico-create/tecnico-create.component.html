@@ -3,7 +3,11 @@
         <h1>Cadastrar Novo Técnico</h1>
         <img class="fullWidth" src="/src/assets/img/side-logo - Copia.jpg" alt="Help Desk - JC Tech">
 
-        <section></section>
+        <section class="section">
+          <mat-checkbox (click)="addPerfil(0)" class="margin" color="primary">Admin</mat-checkbox>
+          <mat-checkbox (click)="addPerfil(1)" [checked]="true" class="margin" color="primary">Cliente</mat-checkbox>
+          <mat-checkbox (click)="addPerfil(2)" class="margin" color="primary">Tecnico</mat-checkbox>
+        </section>
 
         <mat-form-field class="fullWidth" appearance="legacy">
             <mat-label>Nome</mat-label>
@@ -13,7 +17,7 @@
             [formControl]="nome"
             required
             matInput 
-            placeholder="Ex.. fulano de tal"
+            placeholder="Nome do técnicol"
             maxlength="50">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           </mat-form-field>

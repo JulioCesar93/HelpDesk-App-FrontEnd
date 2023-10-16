@@ -2,11 +2,14 @@ import { Injectable } from '@angular/core';
 import { Credenciais } from '../models/credenciais';
 import { HttpClient } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { API_CONFIG } from '../config/api.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+
+  jwtService: JwtHelperService = new JwtHelperService();
 
   constructor(private http: HttpClient) { }
 
@@ -32,3 +35,5 @@ export class AuthService {
   logout() {
     localStorage.clear();
   }
+
+}

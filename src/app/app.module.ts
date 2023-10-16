@@ -75,7 +75,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
       closeButton: true,
       progressBar: true
     }),
-    //NgxMaskModule.forRoot()
+    ///NgxMaskModule.forRoot()
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

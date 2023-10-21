@@ -8,9 +8,6 @@ import { API_CONFIG } from '../config/api.config';
   providedIn: 'root'
 })
 export class TecnicoService {
-  update(tecnico: Tecnico) {
-    throw new Error('Method not implemented.');
-  }
 
   constructor(
     private http: HttpClient) { }
@@ -23,4 +20,11 @@ export class TecnicoService {
     return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos`, tecnico);
   }
 
+  update(tecnico: Tecnico): Observable<Tecnico> {
+    return this.http.put<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${tecnico.id}`, tecnico);
+  }
+
+  delete(id: any): Observable<Tecnico> {
+    return this.http.delete<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${id}`);
+  }
 }

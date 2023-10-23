@@ -43,6 +43,7 @@ import { ClienteDeleteComponent } from './components/cliente/cliente-delete/clie
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { TicketListComponent } from './components/ticket/ticket-list/ticket-list.component';
+import { TicketCreateComponent } from './components/ticket/ticket-create/ticket-create.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { TicketListComponent } from './components/ticket/ticket-list/ticket-list
     ClienteDeleteComponent,
     ClienteListComponent,
     ClienteUpdateComponent,
-    TicketListComponent
+    TicketListComponent,
+    TicketCreateComponent
   ],
   imports: [
     BrowserModule,

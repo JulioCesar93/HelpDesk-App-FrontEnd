@@ -1,1 +1,90 @@
-<p>ticket-create works!</p>
+<div class="container mat-elevation-z8">
+    <h1 class="full-width">Criando ticket</h1>
+    <img class="full-width" src="add img**" alt="Ticket image">
+
+<form class="form">
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Título do Ticket</mat-label>
+        <input 
+          [(ngModel)]="ticket.titulo"
+          name="titulo"
+          [formControl]="titulo"
+          required
+          matInput 
+          placeholder="Ex. Formatar notebook">
+        </mat-form-field>
+</form>
+
+<div class="status-prioridade">
+    <mat-form-field appearance="outline">
+       <mat-label>Selecione um status do Ticket</mat-label>
+       <mat-select 
+       [(ngModel)]="ticket.status"
+       name="status"
+       [formControl]="status" 
+       required>
+         <mat-option value="0">ABERTO</mat-option>
+         <mat-option value="1">EM ANDAMENTO</mat-option>
+         <mat-option value="2">ENCERRADO</mat-option>
+       </mat-select>
+     </mat-form-field>
+    
+     <mat-form-field appearance="outline">
+        <mat-label>Selecione uma Prioridade</mat-label>
+        <mat-select 
+        [(ngModel)]="ticket.prioridade"
+        name="prioridade"
+        [formControl]="prioridade" 
+        required>
+          <mat-option value="0">BAIXA</mat-option>
+          <mat-option value="1">MÉDIA</mat-option>
+          <mat-option value="2">ALTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+   </div>
+
+   <div class="tecnico">
+    <mat-form-field class="full-width" appearance="outline">
+       <mat-label>Selecione um Técnico</mat-label>
+       <mat-select 
+       [(ngModel)]="ticket.tecnico"
+       name="tecnico"
+       [formControl]="tecnico" 
+       required>
+         <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
+       </mat-select>
+     </mat-form-field>
+  </div>  
+  
+  <div class="cliente">
+    <mat-form-field class="full-width" appearance="outline">
+       <mat-label>Selecione um cliente</mat-label>
+       <mat-select 
+       [(ngModel)]="ticket.cliente"
+       name="cliente"
+       [formControl]="cliente" 
+       required>
+         <mat-option *ngFor="let cli of clientes" value="{{ cli.id }}">{{ cli.nome }}</mat-option>
+       </mat-select>
+     </mat-form-field>
+  </div>
+
+  <form class="form">  
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Deixe uma Descrição</mat-label>
+      <textarea 
+      [(ngModel)]="ticket.observacoes"
+      name="observacoes"
+      [formControl]="observacoes"
+      required
+      class="observacoes" 
+      matInput 
+      placeholder="Ex. Formatar sistema operacional do notebook"></textarea>
+    </mat-form-field>
+  </form>
+
+  <button class="full-width mat-elevation-z4" mat-raised-button color="primary">Adicionar</button>
+  <button routerLink="../" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Cancelar</button>
+
+  <p class="full-width">By JC Tech</p>
+</div>  

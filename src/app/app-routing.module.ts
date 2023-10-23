@@ -13,6 +13,7 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { TicketListComponent } from './components/ticket/ticket-list/ticket-list.component';
+import { TicketCreateComponent } from './components/ticket/ticket-create/ticket-create.component';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
       {path: 'clientes/delete/:id',     component: ClienteDeleteComponent},
 
       { path: 'tickets',                component:     TicketListComponent },
+      { path: 'tickets/create',         component:     TicketCreateComponent }
       
     ]
   }

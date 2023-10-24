@@ -38,31 +38,31 @@ export class TicketUpdateComponent implements OnInit {
   cliente:    FormControl = new FormControl(null, [Validators.required]);
 
   constructor(
-    private ticketService: TicketService,
+    private ticketService:  TicketService,
     private clienteService: ClienteService,
     private tecnicoService: TecnicoService,
-    private toastService:    ToastrService,
-    private router: Router,
-    private route: ActivatedRoute,
+    private toastService:   ToastrService,
+    private router:         Router,
+    private route:          ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    this.chamado.id = this.route.snapshot.paramMap.get('id');
+    this.ticket.id = this.route.snapshot.paramMap.get('id');
     this.findById();
     this.findAllClientes();
     this.findAllTecnicos();
   }
 
   findById(): void {
-    this.ticketService.findById(this.chamado.id).subscribe(resposta => {
-      this.chamado = resposta;
+    this.ticketService.findById(this.ticket.id).subscribe(resposta => {
+      this.ticket = resposta;
     }, ex => {
       this.toastService.error(ex.error.error);
     })
   }
 
   update(): void {
-    this.ticketService.update(this.chamado).subscribe(resposta => {
+    this.ticketService.update(this.ticket).subscribe(resposta => {
       this.toastService.success('Ticket atualizado com sucesso', 'Atualizar ticket');
       this.router.navigate(['tickets']);
     }, ex => {

@@ -22,4 +22,8 @@ export class TicketService {
   create(ticket: Ticket): Observable<Ticket> {
     return this.http.post<Ticket>(`${API_CONFIG.baseUrl}/tickets`, ticket);
   }
+
+  update(ticket: Ticket): Observable<Ticket> {
+    return this.http.put<Ticket>(`${API_CONFIG.baseUrl}/tickets/${ticket.id}`, ticket);
+  }
 }
